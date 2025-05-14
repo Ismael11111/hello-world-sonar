@@ -10,7 +10,7 @@ variables:
 steps:
   - task: SonarQubePrepare@5
     inputs:
-      SonarQube: 'SonarQube-AZ'
+      SonarQube: 'hello-world-sonar-ADO'
       scannerMode: 'CLI'
       configMode: 'manual'
       cliProjectKey: 'hello-sonar'
