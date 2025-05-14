@@ -2,7 +2,7 @@ trigger:
   - main
 
 pool:
-  name: ADO-agent
+  name: Default
 
 variables:
   MAVEN_OPTS: "-Xmx1024m"
