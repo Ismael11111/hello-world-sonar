@@ -1,0 +1,30 @@
+trigger:
+  - main
+
+pool:
+  name: ADO-agent
+
+variables:
+  MAVEN_OPTS: "-Xmx1024m"
+
+steps:
+  - task: SonarQubePrepare@5
+    inputs:
+      SonarQube: 'SonarQube-AZ'
+      scannerMode: 'CLI'
+      configMode: 'manual'
+      cliProjectKey: 'hello-sonar'
+      cliProjectName: 'hello-sonar'
+      cliSources: '.'
+
+  - task: Maven@3
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean verify'
+      options: '-DskipTests=false'
+
+  - task: SonarQubeAnalyze@5
+
+  - task: SonarQubePublish@5
+    inputs:
+      pollingTimeoutSec: '300'
