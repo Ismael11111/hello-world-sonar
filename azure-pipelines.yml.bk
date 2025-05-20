@@ -2,29 +2,26 @@ trigger:
   - main
 
 pool:
-  name: name: 1.0.0-$(Date:yyyyMMdd)$(Rev:.r)
+  name: Default
 
 variables:
   MAVEN_OPTS: "-Xmx1024m"
-  -group: Grupo-de-variables-1
 
 steps:
   - task: SonarQubePrepare@5
     inputs:
-      SonarQube: '$(SONARQUBE_URL)'
+      SonarQube: 'hello-world-sonar-ADO'
       scannerMode: 'CLI'
       configMode: 'manual'
       cliProjectKey: 'hello-sonar'
       cliProjectName: 'hello-sonar'
       cliSources: '.'
-      extraProperties: |
-        sonar.login=$(SONARQUBE_TOKEN)
 
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
       goals: 'clean verify'
-      options: '-Drevision=$(Build.BuildNumber) -DskipTests=false'
+      options: '-DskipTests=false'
 
   - task: SonarQubeAnalyze@5
 
