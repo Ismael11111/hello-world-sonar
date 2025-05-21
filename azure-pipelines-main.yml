@@ -1,5 +1,5 @@
 trigger:
-  - main
+  - master
 
 pool:
   name: Default
@@ -31,3 +31,4 @@ steps:
   - task: SonarQubePublish@5
     inputs:
       pollingTimeoutSec: '300'
+       
