@@ -11,14 +11,12 @@ variables:
 steps:
   - task: SonarQubePrepare@5
     inputs:
-      SonarQube: '$(SONARQUBE_URL)'
+      SonarQube: '$(CONEXION_SONAR)'
       scannerMode: 'CLI'
       configMode: 'manual'
       cliProjectKey: 'hello-sonar'
       cliProjectName: 'hello-sonar'
       cliSources: '.'
-      extraProperties: |
-        sonar.login=$(SONARQUBE_TOKEN)
 
   - task: Maven@3
     inputs:
