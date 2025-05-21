@@ -1,6 +1,0 @@
-projectKey=hello-world-sonar
-serverUrl=http://localhost:9000
-serverVersion=10.6.0.92116
-dashboardUrl=http://localhost:9000/dashboard?id=hello-world-sonar
-ceTaskId=6aa061a4-7f23-481f-822e-66c991739d71
-ceTaskUrl=http://localhost:9000/api/ce/task?id=6aa061a4-7f23-481f-822e-66c991739d71
