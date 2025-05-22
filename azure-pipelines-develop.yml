@@ -18,7 +18,5 @@ steps:
         -Dsonar.projectName=hello-sonar
         -Dsonar.host.url=http://localhost:9000
         -Dsonar.login=sqa_db414517fdad563412c057e2163befdb987782ec
-        -Dsonar.sources=src
-        -Dsonar.java.binaries=target/classes
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
