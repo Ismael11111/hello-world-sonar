@@ -12,7 +12,7 @@ steps:
   - task: SonarQubePrepare@5
     inputs:
       SonarQube: 'hello-world-sonar-ADO'
-      scannerMode: 'Other'
+      scannerMode: 'Maven'
       configMode: 'manual'
       cliProjectKey: 'hello-sonar'
       cliProjectName: 'hello-sonar'
