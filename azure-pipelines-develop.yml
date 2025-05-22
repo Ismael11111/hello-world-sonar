@@ -16,7 +16,9 @@ steps:
       configMode: 'manual'
       cliProjectKey: 'hello-sonar'
       cliProjectName: 'hello-sonar'
-      cliSources: '.'
+      extraProperties: |
+        sonar.sources=src
+        sonar.java.binaries=target/classes
 
   - task: Maven@3
     inputs:
