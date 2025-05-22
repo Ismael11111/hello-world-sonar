@@ -20,6 +20,3 @@ steps:
         -Dsonar.login=sqa_db414517fdad563412c057e2163befdb987782ec
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
-  - task: SonarQubePublish@5
-    inputs:
-      pollingTimeoutSec: '300'
