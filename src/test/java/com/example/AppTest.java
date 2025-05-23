@@ -11,4 +11,9 @@ public class AppTest {
         String result = app.sayHello();
         assertEquals("Hello, world!", result);
     }
+
+    @Test
+    void testMain() {
+        App.main(new String[]{});
+    }
 }
